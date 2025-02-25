@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+  body {
+        padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0a0f25, #0d1a3a);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 10%;
+}
+
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    filter: drop-shadow(0px 0px 15px rgba(138, 43, 226, 0.6));
+    animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 10px 0 20px 0;
+    color: #8a2be2;
+    text-shadow: 0 0 15px #8a2be2, 0 0 25px #8a2be2;
+}
+
+.btn {
+    background: linear-gradient(135deg, #8a2be2, #6a1bbf);
+    color: white;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #6a1bbf, #8a2be2);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.7);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* About Section */
+.about {
+    background: linear-gradient(135deg, #0d1a3a, #0a0f25);
+    padding: 100px 10%;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #8a2be2;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.about p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+/* Highlighted Text */
+.highlight {
+    color: #8a2be2;
+    font-weight: bold;
+    text-shadow: 0 0 10px #8a2be2, 0 0 15px #8a2be2;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+    }
+    to {
+        text-shadow: 0 0 15px #8a2be2, 0 0 25px #8a2be2;
+    }
+}
+
+/* Scroll Animation */
+.about-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.about-content.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        padding: 12px 24px;
+    }
+
+    .hero-image {
+        max-width: 250px;
+    }
+
+    .about {
+        padding: 50px 5%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .about p {
+        font-size: 1rem;
+    }
+}
+/* Skills Section */
+.skills {
+    background: linear-gradient(135deg, #0d1a3a, #0a0f25);
+    padding: 100px 10%;
+    color: white;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #2196f3;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Skill Cards */
+.skill-container {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, #111827, #1f2937);
+    border: 2px solid #2196f3;
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.6);
+    color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(33, 150, 243, 0.9);
+}
+
+.skill-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #2196f3;
+}
+
+.skill-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    display: none; /* Hidden initially */
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Expanded Skill */
+.skill-card.expanded {
+    transform: scale(1.2);
+    width: 80%;
+    box-shadow: 0 0 50px rgba(33, 150, 243, 1);
+    z-index: 10;
+    position: relative;
+}
+
+.skill-card.expanded .skill-description {
+    display: block;
+    opacity: 1;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Glow Effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ok*/
+/* Testimonials Section */
+.testimonials {
+    background: linear-gradient(135deg, #0d1a3a, #0a0f25);
+    padding: 100px 10%;
+    color: white;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #8a2be2;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Testimonial Cards */
+.testimonial-card {
+    background: linear-gradient(135deg, #1a1f36, #2a3045);
+    border: 2px solid #8a2be2;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+    padding: 20px;
+    width: 300px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0; /* Hidden for scroll animation */
+    transform: translateY(50px); /* Initial position */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #d1d5db;
+}
+
+.client-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.client-role {
+    font-size: 1rem;
+    color: #8a2be2;
+}
+
+/* Scroll Animation */
+.testimonial-card.scroll-visible {
+    opacity: 1;
+    transform: translateY(0); /* Bring to position */
+    transition: all 0.8s ease-out;
+}
+/* contact section*/
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, #0d1a3a, #0a0f25);
+    padding: 100px 10%;
+    color: white;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #8a2be2;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.contact-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #d1d5db;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 2px solid #8a2be2;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background: #1a1f36;
+    color: white;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-left: 4px solid #8a2be2;
+}
+
+.contact-form button {
+    background: linear-gradient(135deg, #8a2be2, #6a1bbf);
+    color: white;
+    padding: 14px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+.contact-form button:hover {
+    background: linear-gradient(135deg, #6a1bbf, #8a2be2);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-info p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.email-link {
+    font-size: 1.2rem;
+    color: #8a2be2;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.email-link:hover {
+    text-shadow: 0 0 15px #8a2be2;
+}
+
+/* Scroll Animation */
+.contact-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.contact-container.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-info {
+        margin-top: 30px;
+    }
+}
+/* footer section*/
+/* Footer Section */
+.footer {
+    background: linear-gradient(135deg, #0a0f25, #0d1a3a);
+    padding: 50px 10%;
+    text-align: center;
+    color: white;
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #8a2be2;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon-link {
+    color: white;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.icon-link:hover {
+    background: #8a2be2;
+    box-shadow: 0 0 15px #8a2be2;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 1rem;
+    color: #d1d5db;
+    margin-top: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 5%;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+    }
+
+    .icon-link {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+}
+
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const heroText = document.querySelector(".hero-content h1");
+    heroText.style.opacity = "0";
+    heroText.style.transform = "translateY(-20px)";
+    
+    setTimeout(() => {
+        heroText.style.transition = "opacity 1.5s ease-in-out, transform 1.5s ease-in-out";
+        heroText.style.opacity = "1";
+        heroText.style.transform = "translateY(0)";
+    }, 500);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutSection = document.querySelector(".about-content");
+
+    function handleScroll() {
+        const sectionPosition = aboutSection.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (sectionPosition < screenHeight - 100) {
+            aboutSection.classList.add("scroll-visible");
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const skillCards = document.querySelectorAll(".skill-card");
+
+    skillCards.forEach((card) => {
+        let isExpanded = false;
+
+        card.addEventListener("click", function () {
+            if (!isExpanded) {
+                // Expand this card
+                skillCards.forEach((c) => c.classList.remove("expanded")); // Collapse others
+                card.classList.add("expanded");
+                isExpanded = true;
+            } else {
+                // Collapse this card
+                card.classList.remove("expanded");
+                isExpanded = false;
+            }
+        });
+    });
+});
+// ok
+document.addEventListener("DOMContentLoaded", function () {
+    const testimonialCards = document.querySelectorAll(".testimonial-card");
+
+    function handleScroll() {
+        testimonialCards.forEach((card) => {
+            const cardPosition = card.getBoundingClientRect().top;
+            const screenHeight = window.innerHeight;
+
+            if (cardPosition < screenHeight - 100) {
+                card.classList.add("scroll-visible");
+            }
+        });
+    }
+
+    // Trigger scroll animation
+    window.addEventListener("scroll", handleScroll);
+handleScroll();
+});
+// contact section 
+document.addEventListener("DOMContentLoaded", function () {
+    const contactSection = document.querySelector(".contact-container");
+
+    function handleScroll() {
+        const sectionPosition = contactSection.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (sectionPosition < screenHeight - 100) {
+            contactSection.classList.add("scroll-visible");
+        }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Run immediately to check if already in view
+});
+// footer section 
+
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Web Developer & Video Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-image-container">
+            <img src="https://i.imgur.com/YfMFSZ1.png" alt="Profile Image" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <h1>Professional Web Developer</h1>
+            <h2 class="purple-glow">& Video Editor</h2>
+            <a href="https://wa.me/917769064021?text= I%20want%20to%20hire%20you" class="btn">Let's Work Together</a>
+        </div>
+    </section>
+    <section class="about" id="about">
+    <div class="about-content">
+        <h2 class="section-title">About Me</h2>
+        <p>
+            I am a <span class="highlight">professional web developer</span> and 
+            <span class="highlight">video editor</span> with a passion for creating 
+            stunning designs and seamless user experiences.
+        </p>
+        <p>
+            With years of experience in <span class="highlight">front-end development</span>, 
+            <span class="highlight">responsive design</span>, and 
+            <span class="highlight">video editing</span>, I bring ideas to life through 
+            creativity and precision.
+        </p>
+    </div>
+</section>
+  <!--skills-->
+  <section class="skills" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skill-container">
+        <!-- Web Developer Skill -->
+        <div class="skill-card" data-skill="web-developer">
+            <h3 class="skill-title">Web Developer</h3>
+            <p class="skill-description">
+                I create modern, responsive websites with clean and optimized code. Proficient in HTML, CSS, JavaScript, and frameworks like React and Vue.js.
+            </p>
+        </div>
+        <!-- Video Editor Skill -->
+        <div class="skill-card" data-skill="video-editor">
+            <h3 class="skill-title">Video Editor</h3>
+            <p class="skill-description">
+                Expertise in editing professional videos using Adobe Premiere Pro, Final Cut Pro, and After Effects. Delivering creative and visually stunning content.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- ok-->
+<section class="testimonials" id="testimonials">
+    <h2 class="section-title">Testimonials</h2>
+    <div class="testimonial-container">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+            <p class="testimonial-text">
+                "Working with this developer was a fantastic experience! They delivered a stunning, responsive website that exceeded my expectations."
+            </p>
+            <h3 class="client-name">John Doe</h3>
+            <span class="client-role">CEO, TechWave</span>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+            <p class="testimonial-text">
+                "Their video editing skills brought our brand's story to life. The creativity and attention to detail were top-notch!"
+            </p>
+            <h3 class="client-name">Emily Smith</h3>
+            <span class="client-role">Marketing Manager, VisionMedia</span>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+            <p class="testimonial-text">
+                "Highly professional and talented! They transformed our ideas into reality and maintained clear communication throughout."
+            </p>
+            <h3 class="client-name">Michael Lee</h3>
+            <span class="client-role">Project Manager, BuildIt</span>
+        </div>
+    </div>
+</section>
+<!-- contact section -->
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <p class="contact-text">Have a project in mind? Let’s discuss!</p>
+    
+    <div class="contact-container">
+        <!-- Contact Form -->
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <p>Email Me:</p>
+            <a href="mailto:rs8441442@gmail.com" class="email-link">rs8441442@gmail.com</a>
+        </div>
+    </div>
+</section>
+<!-- footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <h2 class="footer-title">Professional Web Developer & Video Editor</h2>
+        
+        <div class="social-icons">
+            <a href="#" class="icon-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="icon-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="icon-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="icon-link"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <p class="footer-text">© 2025 All Rights Reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
